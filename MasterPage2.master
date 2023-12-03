@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>admin</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 913px;
+        }
+    </style>
+    <script type = "text/javascript" >
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+        <table style="width:1100px;margin: 0 auto">
+        <tr style="width:1100px;height:50px">
+            <td style="width:60px">
+                <img src="images/logo1.jpg" style="height: 61px; width: 63px" />
+            </td style="height: 60px; width: 76px">
+            <td style="width:120px">D.R.Rodrigues College</td>
+            <td style="width:500px;font-family:'Comic Sans MS';text-align:center"><h1>Welcome Admin</h1></td>
+            <td style="text-align:right" class="auto-style1">
+                <a href="http://www.facebook.com"><img src="images/facebook.jpg" style="height: 34px; width: 45px" /></a> &nbsp;&nbsp;<a href="http://www.google.com"><img src="images/google.jpg" style="height: 29px; width: 43px" /></a> &nbsp;&nbsp;<a href="http://www.twitter.com"><img src="images/twitter.jpg" style="height: 32px; width: 39px" /></a>
+
+            </td>
+        </tr>
+        <tr style="width:1100px;height:40px;background-color:yellowgreen">
+            <td colspan="4">
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem Text="Add User" Value="Add User" NavigateUrl="~/adduser.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Delete User" Value="Delete User" NavigateUrl="~/deleteuser.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Set Qpaper" Value="Set Qpaper" NavigateUrl="~/setqpaper.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Preview Qpaper" Value="Preview Qpaper" NavigateUrl="~/paperview.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Delete Qpaper" Value="Delete Qpaper" NavigateUrl="~/deleteqpaper.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Report" Value="Report" NavigateUrl="~/reports.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Logout" Value="Logout" NavigateUrl="~/adminlogout.aspx"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#FF6600" ForeColor="White" />
+                    <StaticMenuItemStyle Font-Bold="True" Font-Size="Large" ForeColor="Black" HorizontalPadding="30px" />
+                </asp:Menu>
+            </td>
+        </tr>
+        
+        <tr style="width:1100px">
+            <td colspan="4">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+            </td>
+        </tr>
+        <tr style="width:1100px;height:20px;background-color:black;text-align:center;color:#FFF">
+            <td colspan="4">
+                ALL RIGHT RESERVED
+            </td>
+        </tr>
+
+    </table>
+    
+    </form>
+</body>
+</html>
